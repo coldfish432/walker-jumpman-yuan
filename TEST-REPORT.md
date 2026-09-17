@@ -162,23 +162,43 @@ route that doesn't finish, it isn't a rubber-stamp). No existing assertion
 was deleted or weakened; the original 5 jump marks and all pre-existing
 checks are unchanged and still pass.
 
-## 7. Human playtest — pending
+## 7. Human playtest
 
-**Not yet completed.** Everything above is machine-driven (scripted input
-through Godot's real `Input`/physics, not a substitute for a person
-judging feel). Per the assignment, an automated input route does not
-replace an actual playtest.
+**Playtester:** Yuan Jingya (the author), single session, 2026-09-17, played
+the real build via `play.bat` — normal keyboard input, not scripted.
 
-Run `play.bat` (Windows) or `godot --path godot`, then:
+| Check | Result |
+|---|---|
+| Startup, movement, jump, pause/resume, retry | Works, "feels fine, no issues." Character reads clearly while moving/jumping. |
+| Reached the relocated finish through the new section | Yes. |
+| Zone 3 decision (fast-jump-clears-spike vs. land-then-hop) legible **before** committing | **No** — reached the finish but "at the time didn't realize this was a choice" (player's own words, translated). |
+| Deliberate failure + retry in Zone 3 | Not yet tested by the human playtester (only the success path was played this session); covered by automated evidence in §4 in the meantime. |
 
-- [ ] Play the normal control/retry loop start to finish.
-- [ ] Confirm the Zone 3 decision is legible in the moment (can you tell,
-      before committing, that a fast jump clears the spike and a cautious
-      one doesn't?).
-- [ ] Deliberately fail at least once in Zone 3 and confirm retry feels the
-      same as the original zones.
-- [ ] Confirm the character reads clearly against the world while jumping,
-      not just standing still.
+**This is the required inspect-and-revise finding**, not a passing box to
+check: the risk flagged in `FRICTIONAL.md` before playtesting
+("untested whether the choice is *felt* in the moment, or only visible in
+hindsight") turned out to be real. Root cause found by re-reading
+`session.gd`'s `_draw()`: the only sign explaining the decision was posted
+at x=1006, y=227/249 **before the fix below**, but positioned as part of
+the zone-entrance title block at the *takeoff* for the first gap (around
+x=966) — by the time the player is actually standing on the first new
+ledge deciding how to take the second jump, that text has already
+scrolled off screen behind them.
 
-Results will be appended here (or in a dated addendum) after that session,
-per FRICTIONAL.md.
+**Revision:** moved the decision-specific text
+("Jump now: fast clears the spike ahead." / "Land first, then hop, to play
+it safe.") to draw directly above the first new ledge itself (world
+position ~x1006, y200/214 — above the jump arc's peak height so it's never
+obscured by the character), separate from the "03 / STACKED LANDINGS"
+zone-entrance title, which stays where it was. Re-verified: mechanics
+suite still 25/25 (`complete-real-route` unaffected — this is a draw-only
+change), and `evidence/screens/05-zone3-landing.png` was re-captured
+showing both lines clearly positioned above the character while it stands
+on the ledge, before the second jump.
+
+**Still open:** whether this repositioning actually makes the choice feel
+legible *in the moment* to a first-time player is itself an untested
+claim until re-played by a human — logged honestly in `FRICTIONAL.md`
+rather than assumed fixed. A second human pass (ideally a different
+playtester) and an explicit on-purpose failure/retry test in Zone 3 remain
+open for the next session.

@@ -208,9 +208,13 @@ func _draw() -> void:
 	draw_string(font, Vector2(33, 251), "01 / GET MOVING", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, ink)
 	draw_string(font, Vector2(33, 273), "Read the landing. Then jump.", HORIZONTAL_ALIGNMENT_LEFT, -1, 13, ink)
 	draw_string(font, Vector2(474, 227), "02 / MIND THE GAP", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, ink)
-	# Zone 3 (walker-jumpman-yuan extension): posted at the old finish line, the
-	# takeoff for the first new elevated landing. finish_x-derived text below
-	# stays dynamic so it never desyncs from a relocated finish.
+	# Zone 3 (walker-jumpman-yuan extension). Human playtest found the original
+	# single sign, posted only at the zone entrance (x=966), scrolled off screen
+	# before the player reached the actual decision point on the first new
+	# ledge, so the choice wasn't legible in the moment (see TEST-REPORT.md /
+	# FRICTIONAL.md inspect-and-revise log). The title stays at the entrance;
+	# the decision itself is now called out again right where it's made.
 	draw_string(font, Vector2(966, 227), "03 / STACKED LANDINGS", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, ink)
-	draw_string(font, Vector2(966, 249), "Full jump clears the spike. Or land, then hop.", HORIZONTAL_ALIGNMENT_LEFT, -1, 13, ink)
+	draw_string(font, Vector2(1006, 200), "Jump now: fast clears the spike ahead.", HORIZONTAL_ALIGNMENT_LEFT, -1, 12, ink)
+	draw_string(font, Vector2(1006, 214), "Land first, then hop, to play it safe.", HORIZONTAL_ALIGNMENT_LEFT, -1, 12, ink)
 	draw_string(font, Vector2(finish_x - 38, 225), "FINISH", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, ink)

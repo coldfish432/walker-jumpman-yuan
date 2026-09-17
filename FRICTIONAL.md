@@ -59,20 +59,38 @@ the one required inspect-and-revise cycle, and it addressed a real
 clarity defect (an accent detail that had zero visible effect), not a
 crash.
 
-## What's still open (unresolved)
+## Human playtest confirmed a real design gap (human found it, AI fixed it)
 
-- **No human playtest yet as of this entry.** Every result in
-  `TEST-REPORT.md` §1-6 is scripted-input or headless — genuinely run
-  through the real engine and real physics, but not a person judging feel,
-  timing comfort, or whether the Zone 3 decision reads clearly in the
-  moment rather than only in hindsight. This is called out rather than
-  filled in with an invented session; see `TEST-REPORT.md` §7 for the
-  checklist and instructions to run it.
-- **No second playtester was available** for this submission window.
-- Whether the "run fast to clear both obstacles vs. land-then-hop" choice
-  in Zone 3 is actually *felt* as a decision by a first-time player, versus
-  only visible once you already know the geometry, is untested by anything
-  in this log — that is exactly what the pending human playtest is for.
+Yuan played the actual build (`play.bat`, normal keyboard input) and
+reported: reached the relocated finish, but "at the time didn't realize
+this was a choice" regarding the Zone 3 fast-jump-vs-land-then-hop
+decision. This is exactly the risk flagged as untested earlier in this
+log — it turned out to be real, not hypothetical.
+
+Root cause (Claude, by re-reading `session.gd`'s `_draw()`): the only
+sign explaining the decision was drawn at the zone-entrance title
+position (around the takeoff for the *first* gap), not at the actual
+decision point (the first new ledge, where the player is about to choose
+how to take the *second* jump). By the time a player is standing on that
+ledge, the sign has scrolled off screen behind them.
+
+Fix (Claude): moved the decision-specific two-line hint to draw directly
+above the first new ledge, above the jump arc's peak height so the
+character sprite never covers it, leaving the zone title where it was.
+Re-verified the mechanics suite (still 25/25 — draw-only change) and
+re-captured `evidence/screens/05-zone3-landing.png`. See `TEST-REPORT.md`
+§7 for the full before/after.
+
+**Still open (unresolved):**
+
+- Whether the repositioned sign actually makes the choice legible *in the
+  moment* to a first-time player is itself untested until re-played by a
+  human — not assumed fixed just because the reasoning sounds right.
+- The human playtester has only played the success path once; deliberate
+  failure/retry in Zone 3 has not yet been human-tested (automated
+  evidence covers the mechanism in `TEST-REPORT.md` §4, but not the human
+  "does retry still feel fine here" judgment).
+- No second playtester was available for this submission window.
 
 ## Traceability
 
