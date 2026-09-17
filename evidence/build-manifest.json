@@ -1,0 +1,82 @@
+{
+  "project": "walker-jumpman-yuan",
+  "build_id": "b406bef44c36dc813d139d58b23b30bf0792d84082f2d66407b0d881d012ba54",
+  "created_at": "2026-09-17T22:05:20.194Z",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "renderer": "Compatibility",
+  "scope": "First Steps slice extended with Zone 3 (Stacked Landings) and the Crate-Bot character redesign; starter is nikbearbrown/walker-jumpman",
+  "source_sha256": {
+    "godot\\.gitignore": "7a86efd9a3426b8ce1e6d5fb19dbf79acd3d59eb5b2e8f020e4912be6b1e9580",
+    "godot\\features\\player\\player.gd": "b8469dc61002e078c7fcc3bc4c2192644a3d9ce0f9fe6cc2030c79f070eb58a3",
+    "godot\\features\\player\\player.gd.uid": "b45c2eced704a961fca9a606f67e540cfe5adc31a95c9471a926299e04adbad4",
+    "godot\\features\\player\\tuning.gd": "e901609824efb4b8c1abed2c5f53bd1cc9f025a05d80393e0aafaa4df997aea7",
+    "godot\\features\\player\\tuning.gd.uid": "d43ccec1e5fd8a38b4d8580fc3265e94257822b8c04eb8e9a9a3fc5d5f9b0156",
+    "godot\\game\\main.tscn": "964cbd83886f1f53c037fdf0ded10826cad7b6ac030dff977fe528e9455b85bf",
+    "godot\\game\\session.gd": "aed20fd5efb999b8532bab183315059647d8f779d9dda47b67995ebe7533889d",
+    "godot\\game\\session.gd.uid": "f37be3ae50b15896d96de46df1765b99ebddc3f10b7df011c992377480088ea6",
+    "godot\\levels\\first_steps.json": "8a78356c2be9de73bfbbaa61954f42eb49310735c9a18b292f1c462fe11332b0",
+    "godot\\project.godot": "4588ce169ec4f8dd279e73f01237594d7af84471fa9b105d16833fb1c7f76aba",
+    "godot\\tests\\capture_game.gd": "eb974169f93d0f5564e162e830b5d5fc615d32d94fa0c2cd633a833324e2a390",
+    "godot\\tests\\capture_states.gd": "81c3318329c37b35f7fe4cd0ac0ef811d102b4b74afdc60b7711f848702e6b00",
+    "godot\\tests\\route_driver.gd": "17d10d99a5afb8665739e8247b02c820941df8d0ebd2f97ed7d9b32f6008761a",
+    "godot\\tests\\test_game.gd": "2442c1bef01bf04606d208a9ceb69f7359b0b65fb3d9bdf5b5c3d16b71e924b3",
+    "godot\\tests\\test_keyboard.gd": "d67b19084fce78af34e4b4accbfd6dfb548dca494198e546aae1c47d44bf3c94",
+    "godot\\ui\\hud.gd": "5fcc58a868ac5a14de67fe42241ccc89e61f91f1ce216e4e79563d3c85cbd052",
+    "godot\\ui\\hud.gd.uid": "0d4ec45a976c063906226589fedacc648b4d370d0c167d31cd404821ecbadfe1",
+    "walker-jumpman.command": "cd6d92e7b1603b449589f7a1aacabcc518137c70621f261a3ffaec8ec5f8d88a"
+  },
+  "tests": [
+    {
+      "file": "evidence/mechanics-1789682693.842.json",
+      "checks": 25,
+      "failures": 0
+    },
+    {
+      "file": "evidence/keyboard-1789682695.119.json",
+      "checks": 9,
+      "failures": 0
+    }
+  ],
+  "machine_checks_passed": 34,
+  "human_playtest_sessions": 0,
+  "exported": false,
+  "game_published": false,
+  "screenshots": [
+    {
+      "file": "evidence/screens/01-menu.png",
+      "sha256": "fb7fed0ee470f45fa74cb8b2ee0498b5ae8e720a482dbaa5d356ebef9fb95716"
+    },
+    {
+      "file": "evidence/screens/02-failure.png",
+      "sha256": "3ecdffd72010b1f5b4b60dd29d2f68c50ad4cbcf4a72cf472f2491b3a4bcdb3c"
+    },
+    {
+      "file": "evidence/screens/03-jump.png",
+      "sha256": "48332992c921e53e34708dd992445317d37f3fdad3f85753db9fdef224552daa"
+    },
+    {
+      "file": "evidence/screens/05-zone3-landing.png",
+      "sha256": "cd25336e2acbcf6f8d1f99286a7b99bdee919a5e9701f9b4092a6566d8c58997"
+    },
+    {
+      "file": "evidence/screens/04-complete.png",
+      "sha256": "65f490c83850b8b7b505ec86f7c610f5c20a514b64b4bd6354240797454a6008"
+    },
+    {
+      "file": "evidence/screens/state-facing-right.png",
+      "sha256": "db70cfdcf2da3e720f809805b613b4bcd6d6702186be8468e2097dd88e85606a"
+    },
+    {
+      "file": "evidence/screens/state-facing-left.png",
+      "sha256": "b82129465c70159f6602257597a8c3b8026a3eb59cbcca90e2cc9f02b0a9a333"
+    },
+    {
+      "file": "evidence/screens/state-jumping.png",
+      "sha256": "03fba4c76bbaa6ede7ebda6da07f186093cc63cfead4dc77bfdcdc9c21746072"
+    },
+    {
+      "file": "evidence/screens/state-on-narrow-landing.png",
+      "sha256": "54d3c20563777a487d5f40998d0f1f8805eaaac8c8b355d7f629903ef340d6c5"
+    }
+  ]
+}
