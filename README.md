@@ -1,43 +1,85 @@
-# walker-jumpman — First Steps
+# walker-jumpman-yuan
 
-**Playable source prototype · September 10, 2026 · Godot 4.7.2 / GDScript**
+Assignment 1 extension of the **[nikbearbrown/walker-jumpman](https://github.com/nikbearbrown/walker-jumpman)**
+"First Steps" starter (Godot 4.7.2 / GDScript), by Yuan Jingya
+(yuan.jingya@northeastern.edu) with Claude Code assistance. See
+[SOURCES.md](SOURCES.md) for exactly what's original starter code vs. new,
+and [FRICTIONAL.md](FRICTIONAL.md) for the honest build log.
 
-Standalone game repository: [nikbearbrown/walker-jumpman](https://github.com/nikbearbrown/walker-jumpman). This checkout contains only this game's source, design package, and test evidence—not the Walker toolkit, Brutalist, or video renders.
+## What this is
 
-Clone with `git clone https://github.com/nikbearbrown/walker-jumpman.git`, then import `walker-jumpman/godot/project.godot` in the regular Godot editor. No .NET runtime or external assets are required. On macOS, the launcher below also works when Godot is installed in Applications; on other platforms, use the editor or `godot --path godot` from the cloned folder.
+The starter's small control/retry platformer slice — two zones, two gaps,
+one spike, a finish flag — with:
 
-Double-click [walker-jumpman.command](walker-jumpman.command) to play. Press **Enter** to start; **A/D or arrows** to move, **Space** to jump, **R** to retry, and **Escape/P** to pause. Reach the flag. Retries are unlimited.
+1. **A new character:** "Crate-Bot", an original geometric redesign
+   (flat head, antenna, direction-shifting visor, hazard-stripe belt,
+   blocky feet) drawn the same way the starter drew its character —
+   `draw_rect`/`draw_colored_polygon` in `_draw()`, no imported art. Same
+   collider, same movement tuning.
+2. **A new Zone 3, "Stacked Landings":** past the original finish line, two
+   new required-jump landings and a relocated finish. The second landing
+   carries a spike, and the jump distances are tuned so a full-speed jump
+   off the first landing clears the spike in one arc, while a cautious
+   player who lands short must stop and take a separate hop over it —
+   a real decision, not just a longer floor.
 
-![The actual First Steps game, captured during a scripted jump](evidence/screens/03-jump.png)
+See [CHANGE-BRIEF.md](CHANGE-BRIEF.md) for the predictions made before any
+code was touched, and [TEST-REPORT.md](TEST-REPORT.md) for what was
+actually checked, including one documented inspect-and-revise cycle.
 
-This simple level has two steps, two gaps, one spike hazard, and a finish. It is the control/retry slice, not the full three-zone/cherry design below. See [build results and limitations](BUILD-REPORT.md). To edit, import [godot/project.godot](godot/project.godot) into Godot.
+## Engine / run instructions
 
-The first Walker example is a compact 2D platformer built around readable jumps, optional cherries and quick retries. Every new game project uses the `walker-` prefix. The original `jumping-man-godot` recovery collection remains separate and unchanged; it is not included or required here. Historical design references to sibling recovery files refer to the author's local source collection, not files shipped in this repository.
+**Godot 4.7.2.stable.official.ed1daf0bf**, GL Compatibility renderer, no
+.NET dependency.
 
-## Read in this order
+- **Windows:** double-click [play.bat](play.bat), or run
+  `godot --path godot` from this folder (needs `godot` on PATH, or edit
+  the `.bat` to point at your Godot executable).
+- **macOS:** double-click [walker-jumpman.command](walker-jumpman.command)
+  (the starter's original launcher, unchanged).
+- **Any platform:** open `godot/project.godot` in the regular Godot 4
+  editor and run the main scene.
 
-1. [Game brief](GAME-BRIEF.md) — the short player-facing idea and proposed scope.
-2. [Detailed GDD](GDD.md) — sixteen design sections, source evidence, requirements and twenty-two acceptance cases.
-3. [Level design](LEVEL-DESIGN.md) — the three-zone course and its untested geometry.
-4. [Production plan](PRODUCTION-PLAN.md) — twenty-two dependency-ordered tasks across six phases, plus four deferred tasks.
-5. [Playtest plan](PLAYTEST-PLAN.md) — mechanical tests, formative human sessions, evidence and revision rules.
-6. [Asset plan](ASSET-PLAN.md) — original greybox requirements and the provenance boundary.
-7. [Design status](DESIGN-STATUS.json) — machine-readable revision, decisions, pending approvals and honest runtime state.
+No export templates, .NET runtime, or paid services are required.
 
-![Candidate walker-jumpman course map; not a gameplay screenshot](design/level-overview.png)
+## Controls
 
-[Design consistency review](DESIGN-REVIEW.md) · [Editable SVG map](design/level-overview.svg)
+Identical to the starter — unchanged by this extension:
 
-[Level coordinate data](design/level-01.json) drives this candidate blockout. Counts and geometry can be checked without Godot. Jump reachability, zero-cherry/all-cherry routing, camera behavior and enjoyment have not been tested.
+- **A/D or arrow keys** — move
+- **Space** — jump (fixed height, no double jump)
+- **R** — retry the current attempt
+- **Escape or P** — pause / resume
+- **Enter** — start / resume / replay
 
-## Proposed defaults ready for review
+Unlimited retries. No lives.
 
-Godot 4 with typed GDScript, Compatibility rendering, one three-zone level, twenty optional cherries, one fixed-height jump with small forgiveness windows, hazards, quick retries, keyboard controls and a locally tested Web export. No paid services. No moving-platform dependency in the MVP.
+## What changed (summary)
 
-The tested engine is Godot 4.7.2.stable.official.ed1daf0bf. Zelda's reusable prompt and command/workflow specification belong to the separate Walker toolkit and are not dependencies of this game.
+| Area | Changed | Unchanged |
+|---|---|---|
+| Character | `_draw()` visuals (`godot/features/player/player.gd`) | Collider, `tuning.gd`, all movement/jump code |
+| Level | `first_steps.json` width/solids/hazards/finish; `session.gd` drawing literals; `hud.gd` progress calc | Zone 1/Zone 2 geometry, camera clamp logic, state machine, spike/goal collision mechanism |
+| Tests | `route_driver.gd` (+3 marks), tick budgets in `test_game.gd`/`capture_game.gd`, new `capture_states.gd` | Original 5 jump marks and all pre-existing assertions |
 
-## Current boundary
+Full diff-level detail is in each commit message (`git log`) and in
+[TEST-REPORT.md](TEST-REPORT.md).
 
-The full design is still a draft. Bear subsequently authorized **“Build a simple level for walker-jumpman.”** The first slice is implemented and machine-tested; full-design approvals, human playtesting, cherries/settings, and the Web export remain pending. This is a source-code release, not a hosted game or downloadable executable. The build report and test receipts preserve the earlier local-build history.
+## Known limitations
 
-Next: play this small control/retry loop before expanding the course. The human owns intent, scope, play-feel judgments, and release decisions; AI implements and checks authorized work. The original `/Users/bear/walker-jumpman` stays untouched.
+- The larger three-zone/twenty-cherry design in the starter's own `GDD.md`
+  is **not** implemented here — this extension adds one bounded zone, per
+  the assignment's scope.
+- No audio, settings persistence, moving platforms, or exported build —
+  matches the starter's own stated boundary.
+- Human playtest results are recorded in `TEST-REPORT.md` §7 (single
+  playtester: the author); no second playtester was available for this
+  submission — see `FRICTIONAL.md`.
+- The character's antenna intentionally overshoots the collider box by a
+  few pixels (cosmetic only; documented in `CHANGE-BRIEF.md` failure case
+  1 and `TEST-REPORT.md` §2).
+
+## Final film
+
+*Link and SHA-256 added after the Brutalist walkthrough is rendered — see
+[SUBMISSION.md](SUBMISSION.md).*
