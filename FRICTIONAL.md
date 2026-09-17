@@ -81,16 +81,25 @@ Re-verified the mechanics suite (still 25/25 — draw-only change) and
 re-captured `evidence/screens/05-zone3-landing.png`. See `TEST-REPORT.md`
 §7 for the full before/after.
 
+**Re-verified by the same human, same session, after the fix:** Yuan
+replayed via `play.bat` and confirmed the two-line hint is now visible
+above the first ledge and the choice reads clearly before jumping, and
+separately triggered a real failure in Zone 3 (spike / missed landing)
+and confirmed death/retry/respawn behave the same as the original zones.
+Both closed out in `TEST-REPORT.md` §7.
+
 **Still open (unresolved):**
 
-- Whether the repositioned sign actually makes the choice legible *in the
-  moment* to a first-time player is itself untested until re-played by a
-  human — not assumed fixed just because the reasoning sounds right.
-- The human playtester has only played the success path once; deliberate
-  failure/retry in Zone 3 has not yet been human-tested (automated
-  evidence covers the mechanism in `TEST-REPORT.md` §4, but not the human
-  "does retry still feel fine here" judgment).
-- No second playtester was available for this submission window.
+- Only one playtester (the author) has played this build. A second,
+  independent playtester was not available for this submission window —
+  their feedback might surface a different reading of the sign or the
+  jump feel that the author, already knowing the intended design, can't
+  notice.
+- A momentary scope-creep request came up mid-session — add a dash/sprint
+  pickup and a level section built around it. Correctly identified as
+  out of scope for this assignment (it would change movement tuning,
+  which the brief requires to stay fixed unless justified) and deferred
+  as a follow-up task rather than implemented here.
 
 ## Traceability
 

@@ -196,9 +196,15 @@ change), and `evidence/screens/05-zone3-landing.png` was re-captured
 showing both lines clearly positioned above the character while it stands
 on the ledge, before the second jump.
 
-**Still open:** whether this repositioning actually makes the choice feel
-legible *in the moment* to a first-time player is itself an untested
-claim until re-played by a human — logged honestly in `FRICTIONAL.md`
-rather than assumed fixed. A second human pass (ideally a different
-playtester) and an explicit on-purpose failure/retry test in Zone 3 remain
-open for the next session.
+**Second human pass (same session, same playtester, after the fix):**
+replayed via `play.bat`. Confirmed the two-line hint is now visible above
+the first new ledge before committing to the second jump, and that the
+choice reads clearly beforehand ("现在能提前看到并看懂了" — "can now see it
+in advance and understand it"). Also deliberately failed in Zone 3 (ran
+into the new spike / fell into a gap) and confirmed the death prompt,
+retry wait, and respawn all behave exactly like the original zones
+("正常，和原区域一致" — "normal, consistent with the original zones").
+
+**Still open:** only one playtester (the author) has played this build;
+a second, different playtester was not available for this submission
+window (see `FRICTIONAL.md`).

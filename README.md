@@ -78,6 +78,17 @@ Full diff-level detail is in each commit message (`git log`) and in
 - The character's antenna intentionally overshoots the collider box by a
   few pixels (cosmetic only; documented in `CHANGE-BRIEF.md` failure case
   1 and `TEST-REPORT.md` §2).
+- Only one playtester (the author) has played this build; a second,
+  independent playtester was not available for this submission window.
+
+## Next improvement
+
+A dash/sprint pickup, placed before a course segment designed around it,
+was raised during this build as a follow-up idea. It's deliberately not
+implemented here — it would add a new movement ability, which this
+assignment's brief requires to keep unchanged unless justified, and doing
+it properly needs its own CHANGE-BRIEF predictions and test pass. See
+`FRICTIONAL.md`.
 
 ## Final film
 
