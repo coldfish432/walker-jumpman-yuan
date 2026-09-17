@@ -1,0 +1,11 @@
+{
+  "id": "first-steps",
+  "title": "First Steps",
+  "scope": "Control/retry slice plus the walker-jumpman-yuan Zone 3 extension (Stacked Landings)",
+  "width": 1420,
+  "fall_y": 430,
+  "spawn": [64, 320],
+  "solids": [[0, 320, 448, 64], [512, 320, 224, 64], [784, 320, 176, 64], [160, 304, 48, 16], [576, 288, 48, 32], [1020, 298, 52, 16], [1132, 320, 60, 16], [1248, 320, 172, 64]],
+  "hazards": [[320, 304, 24, 16], [1132, 304, 24, 16]],
+  "finish": [1376, 264, 24, 56]
+}
