@@ -1,0 +1,884 @@
+{
+  "metadata": {
+    "title": "Crate-Bot and Stacked Landings",
+    "slug": "claude-liam-walker-jumpman-yuan-walkthrough",
+    "topic": "GODOT WALKTHROUGH · WALKER-JUMPMAN-YUAN",
+    "kind": "godot-waikthrough",
+    "mode": "walker",
+    "playlist": "NikBearBrown",
+    "brand": "claude-liam",
+    "audience": "CSYE 7370 course reviewers and Godot-modding students",
+    "register": "Teardown",
+    "engine": "kokoro",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "palette": "claude",
+    "style_preset": "claude",
+    "ground": "#FAF9F5",
+    "aspect_ratio": "16:9",
+    "fit": "crop",
+    "captions": false,
+    "channel_title": "@NikBearBrown",
+    "channel": "@NikBearBrown",
+    "folderLabel": "@NikBearBrown",
+    "greeting": "Hola, Liam",
+    "greeting_note": "hello lexicon: Hola (Spanish). Liam persona, one-word cue budget. Wagwan is Bear-only, not used here.",
+    "persona": "Liam (in for Bear)",
+    "presenter": "Liam (in for Bear)",
+    "in_for_bear": true,
+    "game": {
+      "name": "walker-jumpman-yuan",
+      "starter": "nikbearbrown/walker-jumpman (First Steps slice)",
+      "engine_version": "Godot 4.7.2.stable.official.ed1daf0bf",
+      "revision": "44a8aaa8cf6446ef9208ebe9efaa9c5db101dc0c",
+      "revision_note": "docs-only on top of 2569dc4; gameplay identical to 2569dc4 (the sign-legibility fix commit)",
+      "build_id": "bf7faeebe970529c7cbceb0169527d2beb2af4815ab5ab0b2bcaa3f72f914334"
+    },
+    "note": "godot-waikthrough, walker mode. All gameplay beats (B02-B10 except B06) carry real, native 3840x2160 Godot 4.7.2 captures - scripted-input, not a human playtest; see CAPTURE.md and coverage.json. B00 ClaudeComposerAsk is a reconstructed, illustrative prompt, not a historical transcript. Outro card follows OUTRO-LOCK.md exactly.",
+    "links": {
+      "starter_repo": "https://github.com/nikbearbrown/walker-jumpman",
+      "student_repo_note": "Local project (walker-jumpman-yuan); not yet pushed to a remote."
+    },
+    "tags": [
+      "Godot 4",
+      "godot-waikthrough",
+      "gameplay walkthrough",
+      "platformer",
+      "game design",
+      "Kokoro",
+      "Remotion",
+      "Claude",
+      "Teardown register",
+      "course assignment"
+    ],
+    "build": {
+      "at": "2026-09-17T20:24:44",
+      "cut": "master",
+      "filled": 14,
+      "of": 14,
+      "slates": [],
+      "skin_warnings": []
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "B00",
+      "act": "ASK",
+      "role_note": "COLD OPEN LAW. Reconstructed, illustrative Walker prompt - explicitly not a historical transcript. ASK->RESULT: result lines follow the ask.",
+      "narration_text": "Hola - this is Liam, in for Bear. Here's a reconstructed ask, not a transcript: a student wanted Walker to take a short design note - a new character, a new decision-driven stretch of level - and turn it into a real, playable Godot 4 project on top of the walker-jumpman starter.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.02",
+            "event": "composer card fades in on cream"
+          },
+          {
+            "at": "0.12",
+            "event": "greeting 'Hola, Liam' appears above the composer"
+          },
+          {
+            "at": "0.28",
+            "event": "command types the Walker ask about extending walker-jumpman"
+          },
+          {
+            "at": "0.65",
+            "event": "send button arms terracotta"
+          },
+          {
+            "at": "0.78",
+            "event": "RESULT output lines land in sequence below the card"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Hola, Liam",
+            "topic": "GODOT WALKTHROUGH · WALKER-JUMPMAN-YUAN",
+            "segment": "Please Use Walker",
+            "command": "Please use Walker to convert my game design document about extending walker-jumpman's First Steps slice with a new character and a new decision-driven level section into a playable Godot project.",
+            "runningText": "reading the design note…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "Reconstructed prompt - illustrative, not a transcript.",
+              "Character redesign: Crate-Bot.",
+              "New Zone 3: two required jumps, one real decision."
+            ]
+          },
+          "rendered": {
+            "out": "media/B00.mp4",
+            "at": "2026-09-17T23:25:45.780629+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 15.59,
+      "audio_file": "mp3/beat-B00.mp3",
+      "render_duration_s": 15.6,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B00.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "BLUF",
+      "role_note": "EXECUTIVE-SUMMARY LAW - hesitant writer BLUF. Misconception corrected: 'rebuilt this game from scratch' -> 'extended one existing slice', the reel's actual scope claim (see README.md 'Known limitations').",
+      "narration_text": "Walker extended one existing slice - it didn't rebuild the game. One new character, Crate-Bot. One new zone, three jumps deeper. The collider, the movement tuning, the retry loop: all untouched. The one genuinely new thing is a real decision - how you take the second jump decides whether you clear a spike or need a second try.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 26,
+      "lead_silence_s": 0.8,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on-correct",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "cream page; typing begins mid-lead-silence"
+          },
+          {
+            "at": "0.15",
+            "event": "'Walker rebuilt this game from scratch.' types, then pauses"
+          },
+          {
+            "at": "0.4",
+            "event": "'rebuilt this game from scratch' struck through in terracotta, 'extended one existing slice' typed in"
+          },
+          {
+            "at": "0.62",
+            "event": "rest of corrected text completes"
+          },
+          {
+            "at": "0.85",
+            "event": "final corrected text settles; narration covers the full arc"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "text": "Walker rebuilt this game from scratch.\nOne new character.\nOne new zone, same core rules.\nA player chooses the second jump.",
+            "triggerWords": "rebuilt this game from scratch",
+            "replacementWords": "extended one existing slice",
+            "fontSize": 100,
+            "lineSpacing": 2.1,
+            "align": "center",
+            "seed": "7241",
+            "charMs": 8,
+            "mistakeRate": 2,
+            "hesitateWithin": 0,
+            "hesitateBetween": 1,
+            "durationSeconds": 17
+          },
+          "rendered": {
+            "out": "media/B01.mp4",
+            "at": "2026-09-18T00:19:09.045864+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 17.17,
+      "audio_file": "mp3/beat-B01.mp3",
+      "render_duration_s": 17.2,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B01.mp4",
+        "filled_by": "remotion:BrutalistHesitantWriter",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "GAMEPLAY",
+      "role_note": "Real Godot capture, scripted-input (see CAPTURE.md). Introduces the unchanged starter core before any new content.",
+      "narration_text": "This is walker-jumpman's First Steps slice: cross two gaps, clear a spike patch, reach the flag. One jump, no double jump, unlimited retries. Yuan Jingya's build - with Claude Code - keeps every one of those rules exactly as the starter shipped them, and adds to them instead of replacing them.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "capture",
+        "capture_ref": {
+          "id": "run-01-menu",
+          "coverage_feature": "main-menu-start"
+        },
+        "show": [
+          {
+            "at": "0.0",
+            "event": "start menu: 'First steps. Real jumps.' modal, control legend visible"
+          }
+        ]
+      },
+      "qc": {
+        "full_bleed": true,
+        "full_bleed_reason": "Real Godot gameplay capture - the game's own HUD (title bar, control legend, retry/timer footer) is drawn edge-to-edge by design; this is the game's UI, not a title-safe defect.",
+        "contrast_regions": [
+          {
+            "label": "start-modal-card",
+            "box": [
+              0.28,
+              0.3,
+              0.73,
+              0.5
+            ]
+          }
+        ],
+        "contrast_reason": "The start menu dims the gameplay background behind a translucent scrim so the modal card reads as foreground; the whole-frame average blends that dimmed backdrop into the metric. This region samples the actual readable text inside the white modal card."
+      },
+      "actual_duration_s": 16.11,
+      "audio_file": "mp3/beat-B02.mp3",
+      "render_duration_s": 16.133333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B02.mp4",
+        "filled_by": "media",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "GAMEPLAY",
+      "role_note": "Real Godot capture, scripted-input. Shows the new Crate-Bot silhouette and the untouched Zone 1/Zone 2 route together.",
+      "narration_text": "The new character is Crate-Bot - an original geometric redesign: flat head, antenna, a visor that shifts side to side with facing, a hazard-stripe belt. Same eighteen-by-twenty-eight collider, same jump height, same acceleration curve as the starter's character. Zone one and Zone two play exactly as they always did.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "capture",
+        "capture_ref": {
+          "id": "run-02-movement",
+          "coverage_feature": "character-redesign-crate-bot / movement-and-jump-zone1-2"
+        },
+        "show": [
+          {
+            "at": "0.0",
+            "event": "player faces left, then right - visor visibly shifts side"
+          },
+          {
+            "at": "0.3",
+            "event": "four fixed-height jumps clear the Zone 1 and Zone 2 gaps"
+          }
+        ]
+      },
+      "qc": {
+        "full_bleed": true,
+        "full_bleed_reason": "Real Godot gameplay capture - the game's own HUD is drawn edge-to-edge by design; this is the game's UI, not a title-safe defect."
+      },
+      "actual_duration_s": 17.92,
+      "audio_file": "mp3/beat-B03.mp3",
+      "render_duration_s": 17.933333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B03.mp4",
+        "filled_by": "media",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "GAMEPLAY",
+      "role_note": "Real Godot capture via genuine InputEventKey (same technique as the shipped tests/test_keyboard.gd) - real keyboard-driven pause/resume/retry, scripted-input.",
+      "narration_text": "The controls are unchanged too: real Escape pauses on a 'Take a breath' card, freezing position and the timer exactly; real Enter resumes. Real R forces an immediate retry back to the spawn point without counting as a death - only a hazard actually killing you increments the death counter.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "capture",
+        "capture_ref": {
+          "id": "run-07-controls",
+          "coverage_feature": "pause-resume / manual-retry"
+        },
+        "show": [
+          {
+            "at": "0.0",
+            "event": "Enter starts, D moves"
+          },
+          {
+            "at": "0.4",
+            "event": "Escape pauses on 'Take a breath.'; Enter resumes"
+          },
+          {
+            "at": "0.75",
+            "event": "R forces an immediate retry to spawn"
+          }
+        ]
+      },
+      "qc": {
+        "full_bleed": true,
+        "full_bleed_reason": "Real Godot gameplay capture - the game's own HUD is drawn edge-to-edge by design; this is the game's UI, not a title-safe defect."
+      },
+      "actual_duration_s": 16.6,
+      "audio_file": "mp3/beat-B04.mp3",
+      "render_duration_s": 16.6,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B04.mp4",
+        "filled_by": "media",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "GAMEPLAY",
+      "role_note": "Real Godot capture, scripted-input (walks into the real Zone-1 spike, same technique as the shipped tests/capture_game.gd failure shot). Required genuine-failure beat.",
+      "narration_text": "And here's a genuine failure, not a staged one: walking into the real Zone-one spike triggers the same dying state, the same half-second retry wait, and the same respawn at the start as the starter always had. Twenty consecutive deaths were exercised in testing with no more than thirty-four extra ticks of delay each. This loop is completely unchanged by the extension.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "capture",
+        "capture_ref": {
+          "id": "run-03-fail-recover",
+          "coverage_feature": "hazard-death-and-retry"
+        },
+        "show": [
+          {
+            "at": "0.0",
+            "event": "player walks into the real spike trigger"
+          },
+          {
+            "at": "0.35",
+            "event": "'Watch the spikes' card; DYING state"
+          },
+          {
+            "at": "0.7",
+            "event": "respawn at the start, retries 01"
+          }
+        ]
+      },
+      "qc": {
+        "full_bleed": true,
+        "full_bleed_reason": "Real Godot gameplay capture - the game's own HUD is drawn edge-to-edge by design; this is the game's UI, not a title-safe defect."
+      },
+      "actual_duration_s": 19.95,
+      "audio_file": "mp3/beat-B05.mp3",
+      "render_duration_s": 19.966666666666665,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B05.mp4",
+        "filled_by": "media",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "MECHANISM",
+      "role_note": "ILLUSTRATE LAW - real source diff (git show 2569dc4), not a reconstruction. Sets up the cause-and-effect beat: bug description here -> fixed behavior on screen in B07.",
+      "narration_text": "A human playtest caught a real defect here. The sign explaining the Zone-three decision was drawn at the zone's entrance - the takeoff for the first gap - not at the ledge where the decision actually happens. By the time the player needed it, it had scrolled off screen behind them. The fix, commit two-five-six-nine-d-c-four: move two lines forty pixels right and thirteen pixels up, onto the ledge itself, above the jump arc so the character never covers them.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 28,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "diff-reveal",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "GitHub-style diff panel fades in: godot/game/session.gd"
+          },
+          {
+            "at": "0.25",
+            "event": "deleted line highlights red: old single-line hint at the zone entrance (966,249)"
+          },
+          {
+            "at": "0.55",
+            "event": "two added lines highlight green: new two-line hint on the ledge (1006,200 / 1006,214)"
+          },
+          {
+            "at": "0.85",
+            "event": "caption settles: found in human playtest, fixed same session"
+          }
+        ],
+        "remotion": {
+          "pattern": "GitHubCodeDiff",
+          "props": {
+            "file": "godot/game/session.gd",
+            "badge": "+8 −7",
+            "lines": [
+              {
+                "gutter": "206",
+                "text": "Vector2(33, 251): \"01 / GET MOVING\"",
+                "kind": "context"
+              },
+              {
+                "gutter": "207",
+                "text": "Vector2(474, 227): \"02 / MIND THE GAP\"",
+                "kind": "context"
+              },
+              {
+                "gutter": "-",
+                "text": "# ...posted at the old finish line, the takeoff...",
+                "kind": "del"
+              },
+              {
+                "gutter": "+",
+                "text": "# Human playtest found the original single sign,",
+                "kind": "add"
+              },
+              {
+                "gutter": "+",
+                "text": "# posted only at the zone entrance, scrolled off",
+                "kind": "add"
+              },
+              {
+                "gutter": "+",
+                "text": "# screen before the player reached the ledge.",
+                "kind": "add"
+              },
+              {
+                "gutter": "208",
+                "text": "Vector2(966, 227): \"03 / STACKED LANDINGS\"",
+                "kind": "context"
+              },
+              {
+                "gutter": "-",
+                "text": "Vector2(966, 249): \"Full jump clears the spike...hop.\"",
+                "kind": "del"
+              },
+              {
+                "gutter": "+",
+                "text": "Vector2(1006, 200): \"Jump now: fast clears...ahead.\"",
+                "kind": "add"
+              },
+              {
+                "gutter": "+",
+                "text": "Vector2(1006, 214): \"Land first, then hop...safe.\"",
+                "kind": "add"
+              },
+              {
+                "gutter": "220",
+                "text": "Vector2(finish_x-38, 225): \"FINISH\"",
+                "kind": "context"
+              }
+            ],
+            "caption": "session.gd _draw() — commit 2569dc4, found in human playtest (TEST-REPORT.md §7)"
+          },
+          "rendered": {
+            "out": "media/B06.mp4",
+            "at": "2026-09-18T00:20:09.997377+00:00"
+          }
+        }
+      },
+      "qc": {
+        "contrast_regions": [
+          {
+            "label": "file-header",
+            "box": [
+              0.12,
+              0.16,
+              0.88,
+              0.22
+            ]
+          },
+          {
+            "label": "context-code-row",
+            "box": [
+              0.14,
+              0.255,
+              0.5,
+              0.3
+            ]
+          }
+        ],
+        "contrast_reason": "GitHubCodeDiff's add/del rows carry an intentional semantic red/green background tint (not a readability defect); the whole-frame average conflates that row tint with in-line text color. These two regions sample plain code text directly against the panel background, which is what a viewer actually reads."
+      },
+      "actual_duration_s": 22.61,
+      "audio_file": "mp3/beat-B06.mp3",
+      "render_duration_s": 22.633333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B06.mp4",
+        "filled_by": "remotion:GitHubCodeDiff",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "GAMEPLAY",
+      "role_note": "Real Godot capture, scripted-input. Pays off B06: the fixed sign, live, fully legible while the player is stopped exactly where the decision is made.",
+      "narration_text": "Here's the fixed sign, live: both lines readable while the player stands still on the first new ledge, before the second jump. This is the cautious route - stop, then a separate, deliberate hop with a short run-up. It clears the gap and the spike, lands stable, no drama.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "capture",
+        "capture_ref": {
+          "id": "run-05-zone3-cautious",
+          "coverage_feature": "zone3-sign-legibility-fix / zone3-cautious-route"
+        },
+        "show": [
+          {
+            "at": "0.0",
+            "event": "player lands on the first new ledge, comes to a full stop"
+          },
+          {
+            "at": "0.3",
+            "event": "both hint lines fully legible while stationary"
+          },
+          {
+            "at": "0.6",
+            "event": "short run-up, deliberate hop clears the spike, lands stable"
+          }
+        ]
+      },
+      "qc": {
+        "full_bleed": true,
+        "full_bleed_reason": "Real Godot gameplay capture - the game's own HUD is drawn edge-to-edge by design; this is the game's UI, not a title-safe defect."
+      },
+      "actual_duration_s": 14.25,
+      "audio_file": "mp3/beat-B07.mp3",
+      "render_duration_s": 14.266666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B07.mp4",
+        "filled_by": "media",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "GAMEPLAY",
+      "role_note": "Real Godot capture, scripted-input. The alternate valid route - contrasts directly with B07.",
+      "narration_text": "The alternate route: never stop. Carry full running speed off the ledge, and one continuous jump clears the gap and the spike patch in a single arc. Same tuning, same jump height - just different timing. The fast line and the cautious line both work. Neither is a hard gate.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 20,
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "capture",
+        "capture_ref": {
+          "id": "run-04-zone3-fast",
+          "coverage_feature": "zone3-fast-route"
+        },
+        "show": [
+          {
+            "at": "0.0",
+            "event": "player never stops on the first new ledge"
+          },
+          {
+            "at": "0.5",
+            "event": "one continuous jump clears the gap and the spike in a single arc"
+          }
+        ]
+      },
+      "qc": {
+        "full_bleed": true,
+        "full_bleed_reason": "Real Godot gameplay capture - the game's own HUD is drawn edge-to-edge by design; this is the game's UI, not a title-safe defect."
+      },
+      "actual_duration_s": 14.76,
+      "audio_file": "mp3/beat-B08.mp3",
+      "render_duration_s": 14.766666666666667,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B08.mp4",
+        "filled_by": "media",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "GAMEPLAY",
+      "role_note": "Real Godot capture, scripted-input. Zone-3-specific genuine failure - shows the cautious route is a real skill check, not automatically safe.",
+      "narration_text": "The cautious route can still go wrong. Stop on the ledge, then hop too soon - before enough of a run-up - and the jump comes up short, straight into the gap. Real physics, a real death, the same respawn as anywhere else in the level. Caution only pays off if the second jump is actually timed.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 22,
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "capture",
+        "capture_ref": {
+          "id": "run-06-zone3-mistimed",
+          "coverage_feature": "zone3-mistimed-failure"
+        },
+        "show": [
+          {
+            "at": "0.0",
+            "event": "player stops on the ledge, then hops with too little run-up"
+          },
+          {
+            "at": "0.4",
+            "event": "falls short into the gap; real death"
+          },
+          {
+            "at": "0.75",
+            "event": "respawn at the start, same as any other death"
+          }
+        ]
+      },
+      "qc": {
+        "full_bleed": true,
+        "full_bleed_reason": "Real Godot gameplay capture - the game's own HUD is drawn edge-to-edge by design; this is the game's UI, not a title-safe defect."
+      },
+      "actual_duration_s": 15.04,
+      "audio_file": "mp3/beat-B09.mp3",
+      "render_duration_s": 15.066666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B09.mp4",
+        "filled_by": "media",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "GAMEPLAY",
+      "role_note": "Real Godot capture, scripted-input. Closes the gameplay body at the relocated finish.",
+      "narration_text": "The finish line moved four hundred sixty pixels right when Zone three was added - from x nine-sixteen to x thirteen-seventy-six - and every hard-coded drawing literal that assumed the old level width had to move with it: the background, the grid, the progress bar. The validated route completes here in four hundred ninety-eight ticks with zero deaths.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 24,
+      "shot": {
+        "type": "GAMEPLAY",
+        "class": "SHOW",
+        "source": "capture",
+        "capture_ref": {
+          "id": "run-04-zone3-fast",
+          "coverage_feature": "completion-relocated-finish"
+        },
+        "show": [
+          {
+            "at": "0.0",
+            "event": "final jump over the last gap lands on the relocated finish floor"
+          },
+          {
+            "at": "0.5",
+            "event": "'Course complete.' modal; progress bar at 100%"
+          }
+        ]
+      },
+      "qc": {
+        "full_bleed": true,
+        "full_bleed_reason": "Real Godot gameplay capture - the game's own HUD is drawn edge-to-edge by design; this is the game's UI, not a title-safe defect.",
+        "contrast_regions": [
+          {
+            "label": "complete-modal-card",
+            "box": [
+              0.28,
+              0.3,
+              0.73,
+              0.5
+            ]
+          }
+        ],
+        "contrast_reason": "The completion screen dims the gameplay background behind a translucent scrim so the 'Course complete.' modal card reads as foreground; the whole-frame average blends that dimmed backdrop into the metric. This region samples the actual readable text inside the white modal card."
+      },
+      "actual_duration_s": 18.11,
+      "audio_file": "mp3/beat-B10.mp3",
+      "render_duration_s": 18.133333333333333,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B10.mp4",
+        "filled_by": "media",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B11",
+      "act": "VERDICT",
+      "role_note": "ClaudeVerdictArtifact. Separates observed-working from open items, per SKILL.md walker-mode Verdict requirement.",
+      "narration_text": "Verdict. The automated suite is clean: twenty-five of twenty-five mechanics checks, nine of nine keyboard checks, the original two zones provably untouched. Two real defects were found and fixed by inspection and by playtesting, not assumed away - an invisible visor pupil, and the Zone-three sign you just saw fixed. What's still open: only one playtester has run this build, and a dash-pickup idea was deliberately scoped out rather than bolted on.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 28,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "artifact-reveal",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "artifact panel fades in - cream card, title 'Verdict'"
+          },
+          {
+            "at": "0.2",
+            "event": "line 1: 25/25 mechanics, 9/9 keyboard, zones 1-2 untouched"
+          },
+          {
+            "at": "0.4",
+            "event": "line 2: pupil-visibility fix (inspect-and-revise)"
+          },
+          {
+            "at": "0.6",
+            "event": "line 3: Zone 3 sign fix (human playtest)"
+          },
+          {
+            "at": "0.8",
+            "event": "line 4: open - one playtester; dash pickup deferred"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "Verdict",
+            "artifactHeading": "walker-jumpman-yuan",
+            "brandLabel": "@NikBearBrown",
+            "artifactLines": [
+              "25/25 mechanics checks, 9/9 keyboard checks - Zones 1-2 provably untouched.",
+              "Inspect-and-revise: an invisible visor pupil, found and fixed by pixel-sampling.",
+              "Human playtest: the Zone 3 sign, found and fixed the same session.",
+              "Open: one playtester only; a dash pickup was scoped out, not built."
+            ]
+          },
+          "rendered": {
+            "out": "media/B11.mp4",
+            "at": "2026-09-17T23:33:28.471170+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 22.51,
+      "audio_file": "mp3/beat-B11.mp3",
+      "render_duration_s": 22.533333333333335,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B11.mp4",
+        "filled_by": "remotion:ClaudeVerdictArtifact",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B12",
+      "act": "HANDOFF",
+      "role_note": "HANDOFF LAW. Prompt targets exactly the defect class B06/B07 demonstrated - legibility from the actual decision point, not just 'visible somewhere on screen'.",
+      "narration_text": "Your turn. Paste this into Claude: 'I added a new zone to my Godot platformer with two required jumps and a hazard. Read my draw calls and tell me: is the hint text actually visible from the exact position the player stands in when the decision has to be made - not just visible somewhere on screen?' That question is exactly the one a real human playtest caught here. Run it on your own level before you ship it. Liam, in for Bear.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 30,
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.02",
+            "event": "composer card fades in on cream"
+          },
+          {
+            "at": "0.06",
+            "event": "greeting 'Your turn.' appears above the composer"
+          },
+          {
+            "at": "0.12",
+            "event": "the legibility-check prompt types into the composer"
+          },
+          {
+            "at": "0.65",
+            "event": "send button arms terracotta"
+          },
+          {
+            "at": "0.78",
+            "event": "running text: 'reading your draw calls…'"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "GODOT WALKTHROUGH · WALKER-JUMPMAN-YUAN",
+            "segment": "Check Your Own Sign",
+            "command": "I added a new zone to my Godot platformer with two required jumps and a hazard. Read my draw calls and tell me: is the hint text actually visible from the exact position the player stands in when the decision has to be made - not just visible somewhere on screen?",
+            "runningText": "reading your draw calls…",
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Claude",
+            "effortLabel": "High",
+            "output": [
+              "Checking camera bounds against hint text position…",
+              "Flag any hint drawn before the actual decision point."
+            ],
+            "animateTyping": true
+          },
+          "rendered": {
+            "out": "media/B12.mp4",
+            "at": "2026-09-17T23:36:07.151569+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 21.06,
+      "audio_file": "mp3/beat-B12.mp3",
+      "render_duration_s": 21.066666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B12.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-09-17T20:24:44"
+      }
+    },
+    {
+      "beat_id": "B13",
+      "act": "OUTRO",
+      "role_note": "OUTRO LAW / OUTRO-LOCK.md. Exact title restate, hardcoded @NikBearBrown, slug-seeded mascot + jingle, silent under jingle, no burned captions.",
+      "narration_text": "Liam, in for Bear.",
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "estimated_duration_s": 7,
+      "audio_policy": "silence",
+      "shot": {
+        "type": "GRAPHIC",
+        "class": "SHOW",
+        "source": "remotion",
+        "motion": "mascot-title",
+        "show": [
+          {
+            "at": "0.0",
+            "event": "title 'Crate-Bot and Stacked Landings' on cream, EB Garamond serif"
+          },
+          {
+            "at": "0.25",
+            "event": "@NikBearBrown handle appears beneath"
+          },
+          {
+            "at": "0.45",
+            "event": "mascot animation plays (slug-seeded)"
+          },
+          {
+            "at": "0.7",
+            "event": "jingle plays under the card"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Crate-Bot and Stacked Landings",
+            "slug": "claude-liam-walker-jumpman-yuan-walkthrough"
+          },
+          "rendered": {
+            "out": "media/B13.mp4",
+            "at": "2026-09-17T23:44:28.420532+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 7.0,
+      "render_duration_s": 7.0,
+      "build": {
+        "status": "VIDEO",
+        "src": "media\\B13.mp4",
+        "filled_by": "remotion:ClaudeTitleOutro",
+        "at": "2026-09-17T20:24:44"
+      }
+    }
+  ]
+}

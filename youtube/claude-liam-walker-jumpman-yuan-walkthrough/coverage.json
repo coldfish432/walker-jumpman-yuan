@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "game": {
+    "name": "walker-jumpman-yuan",
+    "build_id": "bf7faeebe970529c7cbceb0169527d2beb2af4815ab5ab0b2bcaa3f72f914334"
+  },
+  "captures": {
+    "run-01-menu": {
+      "path": "capture/run-01-menu.mp4",
+      "sha256": "c31acf9215305b3dd5be7ca74f681ba3ec961c17fe0c7f292eb4c103f13bba3f",
+      "build_id": "bf7faeebe970529c7cbceb0169527d2beb2af4815ab5ab0b2bcaa3f72f914334",
+      "method": "scripted-input",
+      "input_log": "capture/run-01-menu-inputs.jsonl"
+    },
+    "run-02-movement": {
+      "path": "capture/run-02-movement.mp4",
+      "sha256": "e2e8d891690cd5938b7f077d2935138e48b7df2a7e118dc55abeca1b9cdc3d3d",
+      "build_id": "bf7faeebe970529c7cbceb0169527d2beb2af4815ab5ab0b2bcaa3f72f914334",
+      "method": "scripted-input",
+      "input_log": "capture/run-02-movement-inputs.jsonl"
+    },
+    "run-03-fail-recover": {
+      "path": "capture/run-03-fail-recover.mp4",
+      "sha256": "9eb47d1f907fbc24c831e9c15d51e5f0f17caf609d92d67a64737dd0559d9dd5",
+      "build_id": "bf7faeebe970529c7cbceb0169527d2beb2af4815ab5ab0b2bcaa3f72f914334",
+      "method": "scripted-input",
+      "input_log": "capture/run-03-fail-recover-inputs.jsonl"
+    },
+    "run-04-zone3-fast": {
+      "path": "capture/run-04-zone3-fast.mp4",
+      "sha256": "57169101b983624e358efa7a76e6e8228cf9cdf4bce81abf5256245d9f8e7e6d",
+      "build_id": "bf7faeebe970529c7cbceb0169527d2beb2af4815ab5ab0b2bcaa3f72f914334",
+      "method": "scripted-input",
+      "input_log": "capture/run-04-zone3-fast-inputs.jsonl"
+    },
+    "run-05-zone3-cautious": {
+      "path": "capture/run-05-zone3-cautious.mp4",
+      "sha256": "ae06992dcb9be548f623285d1b790b725055afa3f6005369668785999364cc68",
+      "build_id": "bf7faeebe970529c7cbceb0169527d2beb2af4815ab5ab0b2bcaa3f72f914334",
+      "method": "scripted-input",
+      "input_log": "capture/run-05-zone3-cautious-inputs.jsonl"
+    },
+    "run-06-zone3-mistimed": {
+      "path": "capture/run-06-zone3-mistimed.mp4",
+      "sha256": "258f5a4235f74e89420c654398ba9e2b6a100742045339f15fd7377f77c3c42d",
+      "build_id": "bf7faeebe970529c7cbceb0169527d2beb2af4815ab5ab0b2bcaa3f72f914334",
+      "method": "scripted-input",
+      "input_log": "capture/run-06-zone3-mistimed-inputs.jsonl"
+    },
+    "run-07-controls": {
+      "path": "capture/run-07-controls.mp4",
+      "sha256": "42c1d36696f902606d9a2bcd338e33b85bc8c186f317e70f9eafd2c0b034502d",
+      "build_id": "bf7faeebe970529c7cbceb0169527d2beb2af4815ab5ab0b2bcaa3f72f914334",
+      "method": "scripted-input",
+      "input_log": "capture/run-07-controls-inputs.jsonl"
+    }
+  },
+  "features": [
+    {
+      "id": "main-menu-start",
+      "status": "implemented",
+      "evidence": [{
+        "capture": "run-01-menu", "beat_id": "B02",
+        "start_s": 0.0, "action_s": 1.0, "end_s": 3.0,
+        "observation": "Start menu renders with the 'First steps. Real jumps.' modal, control legend, and Enter/Start button; unchanged from the starter.",
+        "riff": "This is the same control/retry slice the starter shipped - the extension builds on top of it, not instead of it."
+      }]
+    },
+    {
+      "id": "character-redesign-crate-bot",
+      "status": "implemented",
+      "evidence": [{
+        "capture": "run-02-movement", "beat_id": "B03",
+        "start_s": 0.0, "action_s": 1.06, "end_s": 2.2,
+        "observation": "Player faces left, then right; the visor block visibly shifts sides with facing, on the new geometric Crate-Bot silhouette (flat head, antenna, hazard-stripe belt, blocky feet).",
+        "riff": "Same 18x28 collider and movement tuning as the starter's character - only the _draw() call changed."
+      }]
+    },
+    {
+      "id": "movement-and-jump-zone1-2",
+      "status": "implemented",
+      "evidence": [{
+        "capture": "run-02-movement", "beat_id": "B03",
+        "start_s": 2.13, "action_s": 3.32, "end_s": 6.6,
+        "observation": "Player clears the Zone 1 ledge/gap and the Zone 2 gap with fixed-height jumps (no double jump), reaching x=712 with zero deaths.",
+        "riff": "Zone 1 and Zone 2 geometry is untouched by this extension - this is the original route playing exactly as it always did."
+      }]
+    },
+    {
+      "id": "pause-resume",
+      "status": "implemented",
+      "evidence": [{
+        "capture": "run-07-controls", "beat_id": "B04",
+        "start_s": 1.4, "action_s": 1.9, "end_s": 3.1,
+        "observation": "Real Escape keypress freezes the game on a 'Take a breath.' modal (position/progress bar frozen); real Enter keypress resumes play.",
+        "riff": "Pause is a real state-machine transition (PLAYING to PAUSED), not a cosmetic overlay - position and elapsed time are frozen exactly, confirmed by the automated keyboard suite too."
+      }]
+    },
+    {
+      "id": "manual-retry",
+      "status": "implemented",
+      "evidence": [{
+        "capture": "run-07-controls", "beat_id": "B04",
+        "start_s": 3.1, "action_s": 3.55, "end_s": 4.55,
+        "observation": "Real R keypress immediately resets the player to the spawn point (64,320) without counting as a death.",
+        "riff": "Manual retry and a hazard death both respawn at the same point, but only the hazard death increments the death counter."
+      }]
+    },
+    {
+      "id": "hazard-death-and-retry",
+      "status": "implemented",
+      "evidence": [{
+        "capture": "run-03-fail-recover", "beat_id": "B05",
+        "start_s": 0.0, "action_s": 0.73, "end_s": 1.9,
+        "observation": "Walking into the real Zone-1 spike triggers the DYING state and a 'Watch the spikes' card; after the fixed retry wait the player respawns at the start with retries incremented to 1.",
+        "riff": "A genuine Area2D overlap, not a scripted death flag - and this retry loop is completely unchanged by the Zone 3 extension."
+      }]
+    },
+    {
+      "id": "zone3-sign-legibility-fix",
+      "status": "implemented",
+      "evidence": [{
+        "capture": "run-05-zone3-cautious", "beat_id": "B07",
+        "start_s": 6.28, "action_s": 7.0, "end_s": 7.9,
+        "observation": "Both hint lines ('Jump now: fast clears the spike ahead.' / 'Land first, then hop, to play it safe.') are fully drawn and legible while the player stands still on the first new ledge, before the second jump.",
+        "riff": "This is the exact defect commit 2569dc4 fixed: the sign used to be posted at the zone entrance and had scrolled off screen by the time the player reached this ledge."
+      }]
+    },
+    {
+      "id": "zone3-cautious-route",
+      "status": "implemented",
+      "evidence": [{
+        "capture": "run-05-zone3-cautious", "beat_id": "B07",
+        "start_s": 6.28, "action_s": 7.95, "end_s": 9.8,
+        "observation": "Player comes to a full stop on the first new ledge, then takes a separate short hop that clears the gap and the spike patch, landing stably on the second new floor.",
+        "riff": "The 'land first, then hop' route is a real, separately-timed input decision, not just flavor text - the run-up has a measured minimum before it clears."
+      }]
+    },
+    {
+      "id": "zone3-fast-route",
+      "status": "implemented",
+      "evidence": [{
+        "capture": "run-04-zone3-fast", "beat_id": "B08",
+        "start_s": 5.64, "action_s": 7.48, "end_s": 7.9,
+        "observation": "Without stopping on the first new ledge, a continuous full-speed jump clears both the gap and the spike patch in a single arc, landing past the spike.",
+        "riff": "Same fixed jump height and tuning as every other jump in the game - the only variable is horizontal speed at takeoff, which depends on not stopping."
+      }]
+    },
+    {
+      "id": "zone3-mistimed-failure",
+      "status": "implemented",
+      "evidence": [{
+        "capture": "run-06-zone3-mistimed", "beat_id": "B09",
+        "start_s": 6.72, "action_s": 7.87, "end_s": 10.0,
+        "observation": "Same ledge stop, but a hop taken with too little run-up falls short of the second floor; the player dies for real and respawns at the start.",
+        "riff": "The cautious route is not automatically safe - it still has to be timed. Neither route is a hard gate, but both can be missed."
+      }]
+    },
+    {
+      "id": "completion-relocated-finish",
+      "status": "implemented",
+      "evidence": [{
+        "capture": "run-04-zone3-fast", "beat_id": "B10",
+        "start_s": 7.9, "action_s": 8.1, "end_s": 8.6,
+        "observation": "Final jump over the last gap lands on the relocated finish floor; the HUD progress bar reads 100% and the FINISH label sits next to the flag at its new position (x=1376).",
+        "riff": "The finish moved 460px right when Zone 3 was added - the HUD's progress-bar denominator and the FINISH label position were rewritten to derive from level.finish instead of the old hard-coded x=916."
+      }]
+    },
+    {
+      "id": "dash-pickup",
+      "status": "planned",
+      "reason": "Raised mid-session as a scope-creep idea (a dash/sprint pickup plus a level section built around it) and deliberately deferred - it would change movement tuning, which the assignment's brief requires to keep fixed unless separately justified with its own CHANGE-BRIEF predictions and test pass. See FRICTIONAL.md 'Still open' and README.md 'Next improvement'.",
+      "evidence": []
+    }
+  ]
+}

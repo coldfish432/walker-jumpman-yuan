@@ -1,0 +1,10 @@
+{"clip":"run-04-zone3-fast","event":"session_start","note":"full-speed route, validated jump_marks from tests/route_driver.gd","tick":0}
+{"event":"jump","mark":138.0,"tick":16,"x":140.622207641602}
+{"event":"jump","mark":292.0,"tick":45,"x":295.289886474609}
+{"event":"jump","mark":424.0,"tick":70,"x":428.623413085938}
+{"event":"jump","mark":548.0,"tick":93,"x":551.29052734375}
+{"event":"jump","mark":712.0,"tick":126,"x":715.548400878906}
+{"event":"jump","mark":936.0,"tick":168,"x":939.550598144531}
+{"event":"jump","mark":1048.0,"tick":189,"x":1051.55126953125}
+{"event":"jump","mark":1168.0,"tick":212,"x":1174.21655273438}
+{"deaths":0,"event":"finished","position":"(1374.214, 319.9253)","state":4,"tick":250,"ticks":250}

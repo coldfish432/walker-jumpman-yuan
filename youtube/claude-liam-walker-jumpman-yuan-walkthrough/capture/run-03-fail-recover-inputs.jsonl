@@ -1,0 +1,4 @@
+{"clip":"run-03-fail-recover","event":"session_start","tick":0}
+{"event":"axis","note":"walk into zone-1 spike at x=320","tick":0,"value":1.0}
+{"deaths":1,"event":"death","state":3,"tick":10,"x":316.955749511719}
+{"event":"respawned","state":1,"tick":27,"x":64.3555603027344}

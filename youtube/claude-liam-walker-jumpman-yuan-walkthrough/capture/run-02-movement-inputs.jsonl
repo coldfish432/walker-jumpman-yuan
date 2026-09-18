@@ -1,0 +1,8 @@
+{"clip":"run-02-movement","event":"session_start","tick":0}
+{"event":"axis","note":"face left","tick":0,"value":-1.0}
+{"event":"axis","note":"face right, begin run","tick":26,"value":1.0}
+{"event":"jump","mark":138.0,"tick":52,"x":139.955505371094}
+{"event":"jump","mark":292.0,"tick":81,"x":294.623168945313}
+{"event":"jump","mark":424.0,"tick":106,"x":427.956695556641}
+{"event":"jump","mark":548.0,"tick":129,"x":550.623840332031}
+{"event":"jump","mark":712.0,"tick":162,"x":715.54833984375}

@@ -1,0 +1,7 @@
+{"clip":"run-06-zone3-mistimed","event":"session_start","note":"deliberately too little runup after the ledge stop (1 tick, below the 3-tick minimum measured under --fixed-fps 30 in tests/experiment_zone3.gd) - a genuine failure of the cautious route, not a hard gate on either route","tick":0}
+{"event":"landed_on_ledge","tick":187,"x":1040.884765625}
+{"event":"full_stop","tick":188,"x":1046.21801757813}
+{"event":"runup_begin_short","tick":218,"ticks":1}
+{"event":"hop_mistimed","tick":219,"x":1052.61791992188}
+{"deaths":1,"event":"died","state":3,"tick":263,"x":1241.05859375}
+{"event":"respawned","state":1,"tick":280,"x":64.3555603027344}

@@ -73,13 +73,13 @@ Full diff-level detail is in each commit message (`git log`) and in
 - No audio, settings persistence, moving platforms, or exported build —
   matches the starter's own stated boundary.
 - Human playtest results are recorded in `TEST-REPORT.md` §7 (single
-  playtester: the author); no second playtester was available for this
-  submission — see `FRICTIONAL.md`.
+  playtester: the author, two passes in one session — the second one
+  confirming a sign-legibility fix made in response to the first); no
+  second, independent playtester was available for this submission — see
+  `FRICTIONAL.md`.
 - The character's antenna intentionally overshoots the collider box by a
   few pixels (cosmetic only; documented in `CHANGE-BRIEF.md` failure case
   1 and `TEST-REPORT.md` §2).
-- Only one playtester (the author) has played this build; a second,
-  independent playtester was not available for this submission window.
 
 ## Next improvement
 
@@ -92,5 +92,18 @@ it properly needs its own CHANGE-BRIEF predictions and test pass. See
 
 ## Final film
 
-*Link and SHA-256 added after the Brutalist walkthrough is rendered — see
+Rendered with the Brutalist `godot-waikthrough` skill (walker mode):
+`claude-liam-walker-jumpman-yuan-walkthrough.mp4` — native 3840x2160, 30fps,
+3:59, demonstrates game-source commit `44a8aaa` (gameplay identical to
+`2569dc4`; later commits are docs-only).
+
+**SHA-256:** `7b2c08dc9d4fcfff8f2e2114337f2b53c42ac2eca3ac5d38a7a66b2c9d30c882`
+
+**Hosted at:** *link pending — file kept out of git per size/type policy;
+added here once uploaded to course-designated media storage. See
 [SUBMISSION.md](SUBMISSION.md).*
+
+The film's beat sheet, riff/shot-list/factcheck/prompt docs, real gameplay
+input logs, and QC contact sheet are committed under
+[youtube/claude-liam-walker-jumpman-yuan-walkthrough/](youtube/claude-liam-walker-jumpman-yuan-walkthrough/)
+(video/audio media itself excluded per `.gitignore`).

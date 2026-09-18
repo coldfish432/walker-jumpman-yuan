@@ -1,0 +1,13 @@
+{"clip":"run-05-zone3-cautious","event":"session_start","note":"stop fully on the first new ledge, read the sign, then a separate deliberate hop (>=8-tick runup validated safe in tests/experiment_zone3.gd, seeded at this route's real landing x)","tick":0}
+{"event":"jump","mark":138.0,"tick":16,"x":140.622207641602}
+{"event":"jump","mark":292.0,"tick":45,"x":295.289886474609}
+{"event":"jump","mark":424.0,"tick":70,"x":428.623413085938}
+{"event":"jump","mark":548.0,"tick":93,"x":551.29052734375}
+{"event":"jump","mark":712.0,"tick":126,"x":715.548400878906}
+{"event":"jump","mark":936.0,"tick":168,"x":939.550598144531}
+{"event":"landed_on_ledge","tick":187,"x":1040.884765625}
+{"event":"full_stop","tick":188,"ticks_holding":45,"x":1046.21801757813}
+{"event":"runup_begin","tick":233}
+{"event":"hop","tick":237,"x":1064.17346191406}
+{"event":"landed_safe_past_spike","tick":260,"x":1186.83874511719,"y":319.925262451172}
+{"deaths":0,"event":"clip_end","position":"(1192.172, 319.9253)","state":1,"tick":295}

@@ -1,0 +1,16 @@
+{
+  "B00": "L4|3840x2160@30|crop|report=False|15.600|type-on|||fe35e2bbfabe72f5e659a85746a14f9e9738f2db",
+  "B01": "L4|3840x2160@30|crop|report=False|17.200|type-on-correct|||8ed5a275191879466652cbd93e4c642130bf04f1",
+  "B02": "L4|3840x2160@30|crop|report=False|16.133||||b180ed5b2fa6b9f9979b4bebcb43e8dd2c27697a",
+  "B03": "L4|3840x2160@30|crop|report=False|17.933||||71d6d26e51283c194645a597e932b8cd1c0b7e5a",
+  "B04": "L4|3840x2160@30|crop|report=False|16.600||||d6ba1239fc6748c92a64c6d71c007a703de34db2",
+  "B05": "L4|3840x2160@30|crop|report=False|19.967||||a136b1c6d38a11b856b76308d81f6977b1086e56",
+  "B06": "L4|3840x2160@30|crop|report=False|22.633|diff-reveal|||a1687b1dd23d59fd27796976827a41ac98c90ff8",
+  "B07": "L4|3840x2160@30|crop|report=False|14.267||||5610db1841d105f1f8506f72ff00d7aedd5e1797",
+  "B08": "L4|3840x2160@30|crop|report=False|14.767||||022467380f7439143c82124706603e934d417ecd",
+  "B09": "L4|3840x2160@30|crop|report=False|15.067||||02cdd0c0daff8d8077df38cd995ccad3e5d9931a",
+  "B10": "L4|3840x2160@30|crop|report=False|18.133||||89498a020c8b92e5aaf685cc8cb333796b4716c7",
+  "B11": "L4|3840x2160@30|crop|report=False|22.533|artifact-reveal|||3dce2e589a0cbdec086082f9c8f5bd74f4f523ba",
+  "B12": "L4|3840x2160@30|crop|report=False|21.067|type-on|||6357ce4e361462329ddf31d3bf75215942ced024",
+  "B13": "L4|3840x2160@30|crop|report=False|7.000|mascot-title|||11d4657d2be4374954dda4116ce5a1f84d1da5a6"
+}

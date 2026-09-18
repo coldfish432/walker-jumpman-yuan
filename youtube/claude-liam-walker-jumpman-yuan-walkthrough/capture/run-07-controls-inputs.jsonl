@@ -1,0 +1,6 @@
+{"clip":"run-07-controls","event":"boot","tick":0}
+{"event":"key_enter_start","state":1,"tick":19}
+{"event":"key_d_move","tick":43,"x":150.999801635742}
+{"event":"key_escape_pause","state":2,"tick":57}
+{"event":"key_enter_resume","state":1,"tick":91}
+{"event":"key_r_retry","state":1,"tick":105,"x":64.0}
