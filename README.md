@@ -99,9 +99,7 @@ Rendered with the Brutalist `godot-waikthrough` skill (walker mode):
 
 **SHA-256:** `7b2c08dc9d4fcfff8f2e2114337f2b53c42ac2eca3ac5d38a7a66b2c9d30c882`
 
-**Hosted at:** *link pending — file kept out of git per size/type policy;
-added here once uploaded to course-designated media storage. See
-[SUBMISSION.md](SUBMISSION.md).*
+**Hosted at:** https://youtu.be/L3vC8UsDq0c (YouTube, unlisted)
 
 The film's beat sheet, riff/shot-list/factcheck/prompt docs, real gameplay
 input logs, and QC contact sheet are committed under

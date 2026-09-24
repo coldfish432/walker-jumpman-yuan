@@ -7,7 +7,7 @@
 **Submitted commit SHA:** *see the Canvas submission note (not embedded here, per the assignment's own instruction not to self-reference a commit's SHA inside that commit)*
 **Game-source revision shown in the film:** `44a8aaa` ("Record second human playtest pass: sign fix confirmed, failure/retry OK"). Gameplay is identical to `2569dc4` (the last commit that touched anything under `godot/`); `44a8aaa` and everything after it are documentation/film-only.
 **Godot version and operating system:** Godot 4.7.2.stable.official.ed1daf0bf, GL Compatibility renderer; Windows 11.
-**Final film URL and filename:** *pending upload to course-designated media storage* — filename `claude-liam-walker-jumpman-yuan-walkthrough.mp4` (3840x2160, 30fps, 3:59).
+**Final film URL and filename:** https://youtu.be/L3vC8UsDq0c (YouTube, unlisted) — filename `claude-liam-walker-jumpman-yuan-walkthrough.mp4` (3840x2160, 30fps, 3:59).
 **Final film SHA-256:** `7b2c08dc9d4fcfff8f2e2114337f2b53c42ac2eca3ac5d38a7a66b2c9d30c882`
 
 ## Summary of my changes
