@@ -3,7 +3,7 @@
 **Assignment:** Assignment 1 - Extend Walker Jumpman
 **Student:** Yuan Jingya (yuan.jingya@northeastern.edu)
 **Project name:** walker-jumpman-yuan
-**GitHub repository/folder URL:** *pending — repo not yet created/pushed; see README.md for current status*
+**GitHub repository/folder URL:** https://github.com/coldfish432/walker-jumpman-yuan
 **Submitted commit SHA:** *see the Canvas submission note (not embedded here, per the assignment's own instruction not to self-reference a commit's SHA inside that commit)*
 **Game-source revision shown in the film:** `44a8aaa` ("Record second human playtest pass: sign fix confirmed, failure/retry OK"). Gameplay is identical to `2569dc4` (the last commit that touched anything under `godot/`); `44a8aaa` and everything after it are documentation/film-only.
 **Godot version and operating system:** Godot 4.7.2.stable.official.ed1daf0bf, GL Compatibility renderer; Windows 11.
